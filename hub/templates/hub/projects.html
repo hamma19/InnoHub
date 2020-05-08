@@ -1,0 +1,23 @@
+{% extends "hub/base.html" %}
+{% block content %}
+
+
+<ul>
+{% for p in project_list %}
+{% if p %}
+
+    <li> <a href="{% url 'details' p.id %}">{{ p.nom_projet }} </a> </li>
+
+
+{% endif %}
+
+    {% empty %}
+    <p>Aucun projet n'est disponible</p>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
